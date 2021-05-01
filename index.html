@@ -10,5 +10,91 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>Work with forms</title>
   </head>
-  <body></body>
+  <body>
+    <!-- форма - раздел,который содержит в себе интерактивные элементы для сбора пользовательской информации -->
+    <!-- раздел создается с помощью элемента <form> -->
+    <!-- форма по дефолту может посылать http-запросы -->
+
+    <form action="#" method="post">
+      <!-- action = url куда мы хотим отправить данные для обработки(сервер)-->
+      <!-- method ="post" для размещения ресурса ; method ="get" для получения ресурса ; логинимся или регистрируемся - post -->
+
+      <!-- подтверждение ввода формы(чтобы она выполнила отправку) -->
+      <!-- форма авторизации,(логина, входа) -->
+
+      <!-- input types:
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="datetime">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week"> 
+-->
+      <label>
+        <span>Name:</span>
+        <input
+          type="text"
+          placeholder="first name"
+          required
+          pattern="[A-Z][a-z]{1,20}"
+        />
+        <!-- pattern (шаблон) в качествве значения принимается регулярное выражение -->
+      </label>
+      <br /><br />
+
+      <label>
+        <span>Surname:</span>
+        <input
+          type="text"
+          placeholder="last name"
+          required
+          pattern="[A-Z][a-z]{1,20}"
+        />
+      </label>
+      <br /><br />
+
+      <label for="emailInput">Email adress: </label>
+      <input
+        id="emailInput"
+        type="email"
+        required
+        placeholder="email adress"
+      />
+      <!--required булевый атрибут-->
+      <!-- placeholder  -->
+      <br /><br />
+
+      <label for="passwordInput">Password: </label>
+      <input
+        id="passwordInput"
+        type="password"
+        required
+        placeholder="password"
+        pattern="(?=.*[A-Z])(?=.*\d)^\w{8,68}$"
+      />
+      <!-- label можно связать с конкретным инпутом,
+            механизм связки производится с помощью атрибута id -->
+      <br /><br />
+
+      <button type="submit">Login</button>
+      <!-- <input type="submit" value="Login" /> -->
+    </form>
+  </body>
 </html>
