@@ -47,9 +47,15 @@
 <input type="url">
 <input type="week"> 
 -->
+
+      <h1 style="text-transform: capitalize; font-size: inherit">
+        absolutely intolerant registration form
+      </h1>
+      <br /><br /><br />
       <label>
         <span>Name:</span>
         <input
+          name="userName"
           type="text"
           placeholder="first name"
           required
@@ -62,6 +68,7 @@
       <label>
         <span>Surname:</span>
         <input
+          name="userSurname"
           type="text"
           placeholder="last name"
           required
@@ -72,6 +79,7 @@
 
       <label for="emailInput">Email adress: </label>
       <input
+        name="userEmail"
         id="emailInput"
         type="email"
         required
@@ -83,6 +91,7 @@
 
       <label for="passwordInput">Password: </label>
       <input
+        name="userPassword"
         id="passwordInput"
         type="password"
         required
@@ -93,6 +102,29 @@
             механизм связки производится с помощью атрибута id -->
       <br /><br />
 
+      <!-- добавляем пол при регистрации -->
+      <!-- добавляем атрибут name, чтобы связать radio-inputs,
+        так как, значние этого атрибута одинаково, оно будет переопределяться -->
+
+      <label>
+        <input type="radio" name="gender" value="male" />Male</label
+      >
+      <br />
+      <label>
+        <input
+          type="radio"
+          name="gender"
+          value="female"
+        />Female</label
+      >
+      <br />
+      <p>or . . .</p>
+      <label>
+        <input type="radio" name="gender" value="progromist" />Fucking
+        Slave(progromist)</label
+      >
+
+      <br /><br />
       <button type="submit">Login</button>
       <!-- <input type="submit" value="Login" /> -->
     </form>
