@@ -55,6 +55,7 @@
       <label>
         <span>Name:</span>
         <input
+          autofocus
           name="userName"
           type="text"
           placeholder="first name"
@@ -106,8 +107,16 @@
       <!-- добавляем атрибут name, чтобы связать radio-inputs,
         так как, значние этого атрибута одинаково, оно будет переопределяться -->
 
+      <!-- for inputs with type 'radio' and 'checkbox' is available an attribute 'checked' -->
+
       <label>
-        <input type="radio" name="gender" value="male" />Male</label
+        <input
+          type="radio"
+          name="gender"
+          value="male"
+          required
+          checked
+        />Male</label
       >
       <br />
       <label>
@@ -122,6 +131,35 @@
       <label>
         <input type="radio" name="gender" value="progromist" />Fucking
         Slave(progromist)</label
+      >
+
+      <!-- checkbox -->
+      <br /><br />
+      <h2 style="font-size: 15px">
+        News, there're interesting for you:
+      </h2>
+      <br />
+
+      <label>
+        <input
+          type="checkbox"
+          name="preferences"
+          value="politic"
+        />Politic</label
+      >
+      <label>
+        <input
+          type="checkbox"
+          name="preferences"
+          value="sport"
+        />Sport</label
+      >
+      <label>
+        <input
+          type="checkbox"
+          name="preferences"
+          value="science"
+        />Science</label
       >
 
       <br /><br />
