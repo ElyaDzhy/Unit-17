@@ -51,116 +51,145 @@
       <h1 style="text-transform: capitalize; font-size: inherit">
         absolutely intolerant registration form
       </h1>
-      <br /><br /><br />
-      <label>
-        <span>Name:</span>
+      <br /><br />
+
+      <fieldset>
+        <legend>User personal data</legend>
+        <br />
+        <label>
+          <span>Name:</span>
+          <input
+            autofocus
+            name="userName"
+            type="text"
+            placeholder="first name"
+            required
+            pattern="[A-Z][a-z]{1,20}"
+            value="Jon"
+          />
+          <!-- pattern (шаблон) в качествве значения принимается регулярное выражение -->
+        </label>
+        <br /><br />
+
+        <label>
+          <span>Surname:</span>
+          <input
+            name="userSurname"
+            type="text"
+            placeholder="last name"
+            required
+            pattern="[A-Z][a-z]{1,20}"
+            value="Smith"
+          />
+        </label>
+        <br /><br />
+
+        <label for="emailInput">Email adress: </label>
         <input
-          autofocus
-          name="userName"
-          type="text"
-          placeholder="first name"
+          name="userEmail"
+          id="emailInput"
+          type="email"
           required
-          pattern="[A-Z][a-z]{1,20}"
+          placeholder="email adress"
+          autocomplete="of"
         />
-        <!-- pattern (шаблон) в качествве значения принимается регулярное выражение -->
-      </label>
-      <br /><br />
-
-      <label>
-        <span>Surname:</span>
-        <input
-          name="userSurname"
-          type="text"
-          placeholder="last name"
-          required
-          pattern="[A-Z][a-z]{1,20}"
-        />
-      </label>
-      <br /><br />
-
-      <label for="emailInput">Email adress: </label>
-      <input
-        name="userEmail"
-        id="emailInput"
-        type="email"
-        required
-        placeholder="email adress"
-      />
-      <!--required булевый атрибут-->
-      <!-- placeholder  -->
-      <br /><br />
-
-      <label for="passwordInput">Password: </label>
-      <input
-        name="userPassword"
-        id="passwordInput"
-        type="password"
-        required
-        placeholder="password"
-        pattern="(?=.*[A-Z])(?=.*\d)^\w{8,68}$"
-      />
-      <!-- label можно связать с конкретным инпутом,
-            механизм связки производится с помощью атрибута id -->
-      <br /><br />
-
-      <!-- добавляем пол при регистрации -->
-      <!-- добавляем атрибут name, чтобы связать radio-inputs,
+        <!-- autocomplete - подсказки -->
+        <!--required булевый атрибут-->
+        <!-- placeholder  -->
+        <br /><br />
+        <fieldset>
+          <legend>Gender</legend>
+          <!-- добавляем пол при регистрации -->
+          <!-- добавляем атрибут name, чтобы связать radio-inputs,
         так как, значние этого атрибута одинаково, оно будет переопределяться -->
+          <!-- for inputs with type 'radio' and 'checkbox' is available an attribute 'checked' -->
 
-      <!-- for inputs with type 'radio' and 'checkbox' is available an attribute 'checked' -->
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              required
+              checked
+            />Male</label
+          >
+          <br />
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+            />Female</label
+          >
+          <br />
+          <p>or . . .</p>
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="progromist"
+            />Fucking Slave(progromist)</label
+          >
+        </fieldset>
+        <br /><br />
+        <fieldset>
+          <legend>Your password</legend>
+          <br /><br />
+          <label for="passwordInput">Password: </label>
+          <input
+            name="userPassword"
+            id="passwordInput"
+            type="password"
+            required
+            placeholder="password"
+            pattern="(?=.*[A-Z])(?=.*\d)^\w{8,68}$"
+          />
+          <!-- label можно связать с конкретным инпутом,
+            механизм связки производится с помощью атрибута id -->
+          <br /><br />
+          <label for="passwordConfirm">Confirm password: </label>
+          <input
+            name="userPassword"
+            id="passwordConfirm"
+            type="password"
+            required
+            placeholder="password"
+            pattern="(?=.*[A-Z])(?=.*\d)^\w{8,68}$"
+          />
+          <br /><br />
+        </fieldset>
+        <fieldset>
+          <legend>
+            <h2 style="font-size: 15px">
+              News, there're interesting for you:
+            </h2>
+          </legend>
+          <!-- checkbox -->
+          <br />
 
-      <label>
-        <input
-          type="radio"
-          name="gender"
-          value="male"
-          required
-          checked
-        />Male</label
-      >
-      <br />
-      <label>
-        <input
-          type="radio"
-          name="gender"
-          value="female"
-        />Female</label
-      >
-      <br />
-      <p>or . . .</p>
-      <label>
-        <input type="radio" name="gender" value="progromist" />Fucking
-        Slave(progromist)</label
-      >
-
-      <!-- checkbox -->
-      <br /><br />
-      <h2 style="font-size: 15px">
-        News, there're interesting for you:
-      </h2>
-      <br />
-
-      <label>
-        <input
-          type="checkbox"
-          name="preferences"
-          value="politic"
-        />Politic</label
-      >
-      <label>
-        <input
-          type="checkbox"
-          name="preferences"
-          value="sport"
-        />Sport</label
-      >
-      <label>
-        <input
-          type="checkbox"
-          name="preferences"
-          value="science"
-        />Science</label
-      >
+          <label>
+            <input
+              type="checkbox"
+              name="preferences"
+              value="politic"
+            />Politic</label
+          >
+          <label>
+            <input
+              type="checkbox"
+              name="preferences"
+              value="sport"
+            />Sport</label
+          >
+          <label>
+            <input
+              type="checkbox"
+              name="preferences"
+              value="science"
+            />Science</label
+          >
+        </fieldset>
+      </fieldset>
 
       <br /><br />
       <button type="submit">Login</button>
